@@ -25,5 +25,23 @@ public class BasicMethods {
         Assertions.assertEquals(number, buttons.size(), "List of buttons contains more elements than expected");
     }
 
+    public void checkIfWelcomeMessageIsDisplayed(String message) {
+        WebElement welcomeMessage = driver.findElement(By.xpath("//p[contains(text(), '" + message + "')]"));
+        Assertions.assertTrue(welcomeMessage.isDisplayed(), "Welcome message does not appear");
+    }
+
+    public void selectCheckbox(int checkbox) {
+        driver.findElement(By.cssSelector("input:nth-of-type(" + checkbox + ")")).click();
+    }
+
+    public void checkIfCheckboxIsSelected(int checkbox) {
+        boolean isCheckboxSelected = driver.findElement(By.cssSelector("input:nth-of-type(" + checkbox + ")")).isSelected();
+        Assertions.assertTrue(isCheckboxSelected, "Checkbox is not selected");
+    }
+
+    public void checkIfCheckboxIsNotSelected(int checkbox) {
+        boolean isCheckboxSelected = driver.findElement(By.cssSelector("input:nth-of-type(" + checkbox + ")")).isSelected();
+        Assertions.assertFalse(isCheckboxSelected, "Checkbox is selected");
+    }
 
 }

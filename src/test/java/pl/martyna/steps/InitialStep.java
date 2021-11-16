@@ -39,4 +39,40 @@ public class InitialStep {
     public void checkIfNumberOfButtonsEquals(int number) {
         basic.checkNumberOfButtons(number);
     }
+
+
+//    ______________ Login methods ______________
+
+    @And("I enter login {string}")
+    public void enterLogin(String login) {
+        // to do
+    }
+
+    @And("I enter password {string}")
+    public void enterPassword(String password) {
+        // to do
+    }
+
+    @Then("I can see welcome page with message {string}")
+    public void seeWelcomePageWithMessage(String message) {
+        basic.checkIfWelcomeMessageIsDisplayed(message);
+    }
+
+
+//    ______________ Checkboxes methods ______________
+
+    @And("I select checkbox {int}")
+    public void selectCheckbox(int checkbox) {
+        basic.selectCheckbox(checkbox);
+    }
+
+    @Then("I check if checkbox {int} is selected")
+    public void checkIfCheckboxIsSelected(int checkbox) {
+        basic.checkIfCheckboxIsSelected(checkbox);
+    }
+
+    @Then("I check if checkbox {int} is not selected")
+    public void checkIfCheckboxIsNotSelected(int checkbox) {
+        basic.checkIfCheckboxIsNotSelected(checkbox);
+    }
 }
